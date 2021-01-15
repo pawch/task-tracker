@@ -1,23 +1,25 @@
 package clan.ninja.tasktracker.service;
 
+import clan.ninja.tasktracker.config.TestConfig;
+import clan.ninja.tasktracker.persistence.model.Project;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-@SpringJUnitConfig
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+@SpringJUnitConfig(value = TestConfig.class)
 public class ProjectServiceIntegrationTest {
 
     @Autowired
-    private ApplicationContext applicationContext;
+    private IProjectService projectService;
 
     @Test
-    public void whenContextIsLoaded1_thenNoExceptions() {
-        System.out.println();
+    public void whenSavingProject_thenOK() {
+        Project savedProject = projectService.save(new Project("name", LocalDate.now()));
+        assertNotNull(savedProject);
     }
 
-    @Test
-    public void whenContextIsLoaded2_thenNoExceptions() {
-        System.out.println();
-    }
 }
