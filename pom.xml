@@ -23,15 +23,6 @@
         </license>
     </licenses>
 
-    <developers>
-        <developer>
-            <email>pawchromatic@protonmail.com</email>
-            <name>Paw Chromatic</name>
-            <url>https://github.com/pawch</url>
-            <id>pawch</id>
-        </developer>
-    </developers>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
